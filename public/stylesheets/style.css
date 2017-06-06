@@ -1,0 +1,66 @@
+body {
+
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  color: #00B7FF;
+  text-decoration: underline;
+}
+
+a.danger {
+  color: red;
+}
+
+.spacing {
+  margin-bottom: 20px;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+
+ .thumnail_img {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .icon_delete {
+            position: absolute;
+            top: 0;
+            right: 0;           
+            // background-color: red;
+
+        }
+        .icon_delete i {
+            color: pink;
+            transition: all 500ms ease-out;
+        }
+
+        .icon_delete i:hover {
+            color: #ed1e5c;
+            transform: scale(1.2) rotate(90deg);
+        }
+
+
+
+.content {
+   background-color: #9C28B1;
+   margin-top: -20px;
+padding: 40px;
+color: white;
+}
+
+.content > h1 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 60px;
+}
+

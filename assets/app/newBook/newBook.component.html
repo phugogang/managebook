@@ -1,0 +1,53 @@
+<div class='row'>
+    <h1 class='text-center text-primary'>New Book:</h1>
+    <div class="col-md-6 col-md-offset-3">
+    <form [formGroup]="newBookForm" (ngSubmit)='onSubmit()'>
+        <div class="form-group">
+            <label for='name'>Name:</label>
+            <input type="text" class='form-control' formControlName='name' id='name'>
+        </div>
+
+        <div class="form-group">
+            <label for='author'>Author:</label>
+            <input type='text' class='form-control' formControlName='author' id='author'>
+        </div>
+
+         <div class="form-group">
+            <label for='image'>Image_Url</label>
+            <input type='text' class='form-control' formControlName='image' id='image'>
+     <span *ngIf="!newBookForm.get('image').valid && !newBookForm.get('image').pristine" >Image Url invalid.</span>
+
+        </div>
+   
+
+        <div class="form-group">
+            <label for='language'>Language:</label>
+            <input type="text" class='form-control' formControlName='language' id='language'>
+        </div>
+
+        <div class="form-group">
+            <label for='pages'>Pages:</label>
+            <input type='text' class='form-control' formControlName='pages' id='pages'>
+            <span *ngIf="!newBookForm.get('pages').valid && !newBookForm.get('pages').pristine" >Page Number invalid.</span>
+        </div>
+
+        <div class="form-group">
+            <label for='url'>Link Book:</label>
+            <input type='text' class='form-control' formControlName='url' id='url'>
+      <span *ngIf="!newBookForm.get('url').valid && !newBookForm.get('url').pristine" >Url invalid.</span>
+
+        </div>
+
+       
+
+        <div class="form-group">
+            <label for='description'>Description</label>
+            <textarea rows='7' class='form-control' formControlName='description' id='description'></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type='submit' class='btn btn-primary' [disabled]='!newBookForm.valid' [@buttonState]="newBookForm.valid? 'buttonActive': 'default' ">Create</button>
+        </div>
+    </form>
+</div>
+</div>

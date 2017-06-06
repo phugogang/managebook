@@ -1,0 +1,17 @@
+<div class="container">
+<h1 class='text-center text-primary'>
+    My Books:</h1>
+
+
+<div class="row list">
+    <div class="col-md-2" *ngFor='let result of displayResult; let i = index' @itemState (@itemState.done)='onDisplayResult($event, i)'>
+        <div class="img-thumbnail thumnail_img ">
+            <a [routerLink]="['/books', result._id]"><img [src]='result.image' class='img-responsive'> 
+</a>
+<div class='icon_delete' ><a (click)='onDeleteItem(result, i)'><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></div>
+
+        </div>
+
+    </div>
+</div>
+</div>

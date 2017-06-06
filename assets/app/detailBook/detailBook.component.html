@@ -1,0 +1,49 @@
+<div class='detailinfo'>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1 class='text-primary'> {{ result?.name }}</h1>
+            <span class='pull-right text-small text-success'>By: {{ result?.created_by }}</span>
+            <hr />
+
+            <div class="row">
+                <div class="col-md-7 text-center">
+                    <img [src]="result?.image" class="img-thumbnail">
+
+                </div>
+                <div class="col-md-5">
+                    <ul class='list-group'>
+                        <li class='list-group-item'>Author: <span class='pull-right'>{{ result?.author }}</span></li>
+                        <li class='list-group-item'>Language: <span class='pull-right'>{{ result?.language }}</span></li>
+                        <li class='list-group-item'>Pages: <span class='pull-right'>{{ result?.pages }}</span></li>
+                    </ul>
+
+                    <div *ngIf='result?.created_by == _appService.username'>
+                        <button (click)='onEdit(result)' class='btn btn-warning'>EDIT</button>
+                        <button (click)='onDelete(result)' class='btn btn-danger pull-right'>DELETE</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <h3>Description:</h3>
+            <p [innerText]='result?.description'></p>
+        </div>
+
+
+        <div class="col-md-3 col-md-offset-1">
+            <br>
+            <br>
+            <hr />
+            <button (click)='onBuyIt(result)' class='btn btn-success btn-lg btn-block' style='margin-top: 100px;'>MORE</button>
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>

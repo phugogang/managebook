@@ -1,0 +1,24 @@
+<!--<h1 class='text-center text-primary'>All Books:</h1>
+
+
+
+<a [routerLink]='[result._id]' *ngFor='let result of results'><img  class="img-thumbnail"  [src]="result?.image"> 
+</a>-->
+
+
+<div class="container">
+    <h1 class='text-center text-primary'>
+        All Books:</h1>
+
+    <div class="row">
+        <div class="col-md-2" *ngFor='let result of displayResult; let i = index' @itemState (@itemState.done)="onDisplayResult($event, i)">
+            <div class="img-thumbnail thumnail_img ">
+                <a [routerLink]="['/books', result._id]"><img [src]='result.image' class='img-responsive'> 
+</a>
+                <div *ngIf="result?.created_by == _appService.username" class='icon_delete'><a (click)='onDeleteItem(result, i)'><i class="fa fa-times fa-2x" aria-hidden="true"></i></a></div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
